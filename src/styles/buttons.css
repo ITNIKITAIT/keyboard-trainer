@@ -1,0 +1,21 @@
+.btn-reload {
+    background-color: var(--timer);
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.btn-theme {
+    display: block;
+    cursor: pointer;
+    background-color: var(--bg-button);
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    min-width: 80px;
+    padding: 3px;
+    transition: all 0.2s;
+}
