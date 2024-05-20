@@ -19,3 +19,9 @@
     padding: 3px;
     transition: all 0.2s;
 }
+
+.btn-active {
+    background-color: black;
+    animation: pulseK 200ms ease-in-out;
+    color: white;
+}

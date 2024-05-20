@@ -169,7 +169,7 @@ header {
     background: linear-gradient(to right, #a78bfa, #7c3aed);
     height: 100%;
     transition: all 1s linear;
-    width: 80%;
+    width: 100%;
 }
 
 .keyboard {
@@ -212,4 +212,88 @@ header {
 }
 .word--correct {
     color: green;
+}
+
+.statistic {
+    position: absolute;
+    top: 0;
+    transform: translateX(-110%);
+    border-width: 2px;
+    border-color: #d1d5db;
+    border-style: solid;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.statistic__box {
+    background-color: #7c3aed;
+    text-align: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.statistic__title {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+.statistic__subtitle {
+    color: white;
+    font-size: 16px;
+}
+
+.statistic-list {
+    min-width: 300px;
+}
+.statistic-list__item {
+    color: black;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px;
+    background-color: #f3f4f6;
+}
+.statistic__accuracy {
+    font-weight: 700;
+}
+
+.statistic__correct {
+    color: #16a34a;
+}
+.statistic__wrong {
+    color: #dc2626;
+}
+
+.statistic h3 {
+    color: black;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 12px;
+    background-color: white;
+}
+
+.statistic__record {
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 12px;
+    background-color: white;
+}
+
+@keyframes pulseK {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

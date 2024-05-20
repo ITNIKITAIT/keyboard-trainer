@@ -89,80 +89,148 @@
                     <div class="timer-bar">
                         <div class="timer-bar__content"></div>
                     </div>
-
-                    <!-- Statistic -->
+                </div>
+                <div class="statistic">
+                    <div class="statistic__box">
+                        <h2 class="statistic__title">25 WPM</h2>
+                        <p class="statistic__subtitle">(words per minute)</p>
+                    </div>
+                    <ul class="statistic-list">
+                        <li class="statistic-list__item">
+                            Accuracy
+                            <span class="statistic__accuracy">25%</span>
+                        </li>
+                        <li class="statistic-list__item">
+                            Correct words
+                            <span class="statistic__correct">25</span>
+                        </li>
+                        <li class="statistic-list__item">
+                            Wrong words
+                            <span class="statistic__wrong">25</span>
+                        </li>
+                    </ul>
+                    <h3 class="statistic__record">Your last record</h3>
+                    <h4 class="statistic__record">78 WPM</h4>
                 </div>
             </div>
             <div class="keyboard">
-                <div class="keyButton">`</div>
-                <div class="keyButton">1</div>
-                <div class="keyButton">2</div>
-                <div class="keyButton">3</div>
-                <div class="keyButton">4</div>
-                <div class="keyButton">5</div>
-                <div class="keyButton">6</div>
-                <div class="keyButton">7</div>
-                <div class="keyButton">8</div>
-                <div class="keyButton">9</div>
-                <div class="keyButton">0</div>
-                <div class="keyButton">-</div>
-                <div class="keyButton">=</div>
-                <div style="grid-column: span 4" class="keyButton">
+                <div class="keyButton" data-key="`">`</div>
+                <div class="keyButton" data-key="1">1</div>
+                <div class="keyButton" data-key="2">2</div>
+                <div class="keyButton" data-key="3">3</div>
+                <div class="keyButton" data-key="4">4</div>
+                <div class="keyButton" data-key="5">5</div>
+                <div class="keyButton" data-key="6">6</div>
+                <div class="keyButton" data-key="7">7</div>
+                <div class="keyButton" data-key="8">8</div>
+                <div class="keyButton" data-key="9">9</div>
+                <div class="keyButton" data-key="0">0</div>
+                <div class="keyButton" data-key="-">-</div>
+                <div class="keyButton" data-key="=">=</div>
+                <div
+                    style="grid-column: span 4"
+                    class="keyButton"
+                    data-key="BACKSPACE">
                     Backspace
                 </div>
 
-                <div style="grid-column: span 3" class="keyButton">Tab</div>
-                <div class="keyButton">Q</div>
-                <div class="keyButton">W</div>
-                <div class="keyButton">E</div>
-                <div class="keyButton">R</div>
-                <div class="keyButton">T</div>
-                <div class="keyButton">Y</div>
-                <div class="keyButton">U</div>
-                <div class="keyButton">I</div>
-                <div class="keyButton">O</div>
-                <div class="keyButton">P</div>
-                <div class="keyButton">[</div>
-                <div class="keyButton">]</div>
-                <div style="grid-column: span 3" class="keyButton">\</div>
+                <div
+                    style="grid-column: span 3"
+                    class="keyButton"
+                    data-key="TAB">
+                    Tab
+                </div>
+                <div class="keyButton" data-key="Q">Q</div>
+                <div class="keyButton" data-key="W">W</div>
+                <div class="keyButton" data-key="E">E</div>
+                <div class="keyButton" data-key="R">R</div>
+                <div class="keyButton" data-key="T">T</div>
+                <div class="keyButton" data-key="Y">Y</div>
+                <div class="keyButton" data-key="U">U</div>
+                <div class="keyButton" data-key="I">I</div>
+                <div class="keyButton" data-key="O">O</div>
+                <div class="keyButton" data-key="P">P</div>
+                <div class="keyButton" data-key="[">[</div>
+                <div class="keyButton" data-key="]">]</div>
+                <div style="grid-column: span 3" class="keyButton" data-key="\">
+                    \
+                </div>
 
-                <div style="grid-column: span 4" class="keyButton">
+                <div
+                    style="grid-column: span 4"
+                    class="keyButton"
+                    data-key="CAPSLOCK">
                     CapsLock
                 </div>
-                <div class="keyButton">A</div>
-                <div class="keyButton">S</div>
-                <div class="keyButton">D</div>
-                <div class="keyButton">F</div>
-                <div class="keyButton">G</div>
-                <div class="keyButton">H</div>
-                <div class="keyButton">J</div>
-                <div class="keyButton">K</div>
-                <div class="keyButton">L</div>
-                <div class="keyButton">:</div>
-                <div class="keyButton">"</div>
-                <div style="grid-column: span 4" class="keyButton">Enter</div>
+                <div class="keyButton" data-key="A">A</div>
+                <div class="keyButton" data-key="S">S</div>
+                <div class="keyButton" data-key="D">D</div>
+                <div class="keyButton" data-key="F">F</div>
+                <div class="keyButton" data-key="G">G</div>
+                <div class="keyButton" data-key="H">H</div>
+                <div class="keyButton" data-key="J">J</div>
+                <div class="keyButton" data-key="K">K</div>
+                <div class="keyButton" data-key="L">L</div>
+                <div class="keyButton" data-key=":">:</div>
+                <div class="keyButton" data-key="'">"</div>
+                <div
+                    style="grid-column: span 4"
+                    class="keyButton"
+                    data-key="ENTER">
+                    Enter
+                </div>
 
-                <div style="grid-column: span 5" class="keyButton">Shift</div>
-                <div class="keyButton">Z</div>
-                <div class="keyButton">X</div>
-                <div class="keyButton">C</div>
-                <div class="keyButton">V</div>
-                <div class="keyButton">B</div>
-                <div class="keyButton">N</div>
-                <div class="keyButton">M</div>
-                <div class="keyButton">,</div>
-                <div class="keyButton">.</div>
-                <div class="keyButton">/</div>
-                <div style="grid-column: span 5" class="keyButton">Shift</div>
+                <div
+                    style="grid-column: span 5"
+                    class="keyButton"
+                    data-key="SHIFT">
+                    Shift
+                </div>
+                <div class="keyButton" data-key="Z">Z</div>
+                <div class="keyButton" data-key="X">X</div>
+                <div class="keyButton" data-key="C">C</div>
+                <div class="keyButton" data-key="V">V</div>
+                <div class="keyButton" data-key="B">B</div>
+                <div class="keyButton" data-key="N">N</div>
+                <div class="keyButton" data-key="M">M</div>
+                <div class="keyButton" data-key=",">,</div>
+                <div class="keyButton" data-key=".">.</div>
+                <div class="keyButton" data-key="/">/</div>
+                <div
+                    style="grid-column: span 5"
+                    class="keyButton"
+                    data-key="SHIFT">
+                    Shift
+                </div>
 
-                <div style="grid-column: span 3" class="keyButton">Ctrl</div>
-                <div class="keyButton">Fn</div>
-                <div class="keyButton">Alt</div>
-                <div style="grid-column: span 15" class="keyButton"></div>
-                <div class="keyButton">Alt</div>
-                <div style="grid-column: span 3" class="keyButton">Win</div>
-                <div style="grid-column: span 3" class="keyButton">Ctrl</div>
+                <div
+                    style="grid-column: span 3"
+                    class="keyButton"
+                    data-key="CONTROL">
+                    Ctrl
+                </div>
+                <div class="keyButton" data-key="FN">Fn</div>
+                <div class="keyButton" data-key="ALT">Alt</div>
+                <div
+                    style="grid-column: span 15"
+                    class="keyButton"
+                    data-key=" "></div>
+                <div class="keyButton" data-key="ALT">Alt</div>
+                <div
+                    style="grid-column: span 3"
+                    class="keyButton"
+                    data-key="WIN">
+                    Win
+                </div>
+                <div
+                    style="grid-column: span 3"
+                    class="keyButton"
+                    data-key="CONTROL">
+                    Ctrl
+                </div>
             </div>
         </main>
+
+        <script type="module" src="../src/js/keyboard.js"></script>
     </body>
 </html>

@@ -208,7 +208,6 @@
         }
       ],
       "arrow-parens": [
-        "error",
         "as-needed"
       ],
       "arrow-body-style": [
