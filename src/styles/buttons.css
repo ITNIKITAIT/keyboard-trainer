@@ -25,3 +25,8 @@
     animation: pulseK 200ms ease-in-out;
     color: white;
 }
+
+.btn-active:hover {
+    background-color: black;
+    color: white;
+}
