@@ -10,12 +10,20 @@ const field = document.querySelector('.field');
 const writeInput = document.querySelector('.input-write');
 
 const fillWords = async () => {
+    const loader = document.querySelector('.loader');
+    const fieldWpapper = document.querySelector('.field--wrapper');
+    fieldWpapper.style.display = 'none';
+    loader.style.display = 'block';
+
     field.innerHTML = '';
     const data = await getWords();
     data.map((word) => {
         const div = `<div class="word">${word}</div>`;
         field.insertAdjacentHTML('beforeend', div);
     });
+
+    fieldWpapper.style.display = 'block';
+    loader.style.display = 'none';
     words = document.querySelectorAll('.word');
     words[0].classList.add('word-current');
 };
@@ -67,7 +75,7 @@ writeInput.addEventListener('input', () => {
 
     if (!isStart) {
         isStart = true;
-        stopTimer = timer(10);
+        stopTimer = timer(60);
     }
 
     const index = printedWords.length;

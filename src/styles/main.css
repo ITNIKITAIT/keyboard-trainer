@@ -1,5 +1,5 @@
 :root {
-    --bg-button: rgb(252, 191, 77);
+    --bg-button: rgb(255, 255, 255);
     --border-color: black;
     --primary-color: black;
     --primary-bg-color: #fff;
@@ -11,10 +11,33 @@
     --hover-key: #f1f5f9;
 }
 
+.dark {
+    --bg-button: rgb(63, 63, 63);
+    --border-color: #fff;
+    --primary-color: #fff;
+    --primary-bg-color: rgba(34, 34, 34, 0.892);
+    --primary-border-color: #fff;
+    --curr-word: #0f172a;
+    --timer: #fff;
+    --second-bg: transparent;
+    --reverse-bg: black;
+    --hover-key: rgb(51, 51, 51);
+    .dark-svg {
+        display: block;
+    }
+    .light-svg {
+        display: none;
+    }
+    .btn-switch {
+        margin-left: 37px;
+    }
+}
+
 body {
     margin: 0;
     background-color: var(--primary-bg-color);
     font-family: 'Segoe UI';
+    transition: all 0.25s;
 }
 
 ul {
@@ -289,6 +312,24 @@ header {
     background-color: white;
 }
 
+.loader {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 50px;
+    border: 10px solid #494949;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 @keyframes pulseK {
     0% {
         transform: scale(1);

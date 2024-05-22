@@ -10,23 +10,41 @@
 }
 
 .btn-theme {
-    display: block;
+    display: flex;
     cursor: pointer;
     background-color: var(--bg-button);
     border-radius: 20px;
     border: 2px solid var(--border-color);
     min-width: 80px;
-    padding: 3px;
+    padding: 1px 3px;
     transition: all 0.2s;
+    justify-content: start;
+    transition: all 0.25s;
 }
 
 .btn-active {
     background-color: black;
     animation: pulseK 200ms ease-in-out;
-    color: white;
+    color: white !important;
 }
 
 .btn-active:hover {
     background-color: black;
-    color: white;
+    color: white !important;
+}
+
+.btn-switch {
+    background-color: black;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    transition: all 0.25s;
+}
+
+.dark-svg {
+    display: none;
 }
