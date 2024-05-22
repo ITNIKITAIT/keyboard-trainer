@@ -96,7 +96,7 @@ header {
     position: relative;
 }
 
-.field {
+.field--wrapper {
     border-width: 4px;
     border-color: var(--primary-border-color);
     border-style: solid;
@@ -205,11 +205,12 @@ header {
 .word {
     display: inline-block;
     padding: 0 8px;
+    line-height: 58px;
 }
 
 .word-current {
     background-color: var(--curr-word);
-    border-radius: 1.5rem;
+    border-radius: 20px;
 }
 
 .word--incorrect {

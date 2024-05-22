@@ -69,15 +69,15 @@
             <div class="main__container">
                 <!-- LOading... -->
 
-                <div class="field">
-                    <div class="field--wrapper">
+                <div class="field--wrapper">
+                    <div class="field">
                         <!-- Words -->
                     </div>
                 </div>
                 <div>
                     <div class="write-section">
                         <input type="text" class="input-write" />
-                        <div class="time">0:59</div>
+                        <div class="time">1:00</div>
                         <button class="btn-reload">
                             <svg width="40px" height="40px" viewBox="0 0 24 24">
                                 <path
@@ -92,25 +92,31 @@
                 </div>
                 <div class="statistic">
                     <div class="statistic__box">
-                        <h2 class="statistic__title">25 WPM</h2>
+                        <h2 class="statistic__title" id="wpm">25 WPM</h2>
                         <p class="statistic__subtitle">(words per minute)</p>
                     </div>
                     <ul class="statistic-list">
                         <li class="statistic-list__item">
                             Accuracy
-                            <span class="statistic__accuracy">25%</span>
+                            <span class="statistic__accuracy" id="accuracy"
+                                >25%</span
+                            >
                         </li>
                         <li class="statistic-list__item">
                             Correct words
-                            <span class="statistic__correct">25</span>
+                            <span class="statistic__correct" id="correct-words"
+                                >25</span
+                            >
                         </li>
                         <li class="statistic-list__item">
                             Wrong words
-                            <span class="statistic__wrong">25</span>
+                            <span class="statistic__wrong" id="wrong-words"
+                                >25</span
+                            >
                         </li>
                     </ul>
                     <h3 class="statistic__record">Your last record</h3>
-                    <h4 class="statistic__record">78 WPM</h4>
+                    <h4 class="statistic__record" id="record">78 WPM</h4>
                 </div>
             </div>
             <div class="keyboard">
