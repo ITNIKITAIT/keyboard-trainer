@@ -1,4 +1,4 @@
-const API_URL = `https://random-word-api.herokuapp.com`;
+const API_URL = 'https://random-word-api.herokuapp.com';
 
 export const getWords = async (num = 50) => {
     try {

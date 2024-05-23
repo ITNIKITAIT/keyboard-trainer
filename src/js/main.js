@@ -17,7 +17,7 @@ const fillWords = async () => {
 
     field.innerHTML = '';
     const data = await getWords();
-    data.map((word) => {
+    data.map(word => {
         const div = `<div class="word">${word}</div>`;
         field.insertAdjacentHTML('beforeend', div);
     });
@@ -30,18 +30,7 @@ const fillWords = async () => {
 
 window.onload = fillWords;
 
-export const reload = () => {
-    printedWords = [];
-    field.style.marginTop = `0px`;
-    isStart = false;
-    clearInput(writeInput);
-    fillWords();
-
-    if (timer) timer.stop();
-};
-document.querySelector('.btn-reload').addEventListener('click', reload);
-
-const clearInput = (input) => {
+const clearInput = input => {
     input.value = '';
 };
 const updateWord = (currWord, newWord) => {
@@ -57,7 +46,7 @@ const checkInput = (currWord, newWord) => {
         currWord.classList.remove('word--incorrect');
     }
 };
-const updateLine = (nextWord) => {
+const updateLine = nextWord => {
     const maxTop = 120;
     if (nextWord && nextWord.getBoundingClientRect().top > maxTop) {
         const margin = parseInt(field.style.marginTop || 0);
@@ -65,6 +54,16 @@ const updateLine = (nextWord) => {
         field.style.marginTop = margin - lineHeight + 'px';
     }
 };
+export const reload = () => {
+    printedWords = [];
+    field.style.marginTop = '0px';
+    isStart = false;
+    clearInput(writeInput);
+    fillWords();
+
+    if (timer) timer.stop();
+};
+document.querySelector('.btn-reload').addEventListener('click', reload);
 
 writeInput.addEventListener('input', () => {
     const newWord = writeInput.value;
