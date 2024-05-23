@@ -1,10 +1,10 @@
 import { getWords } from './api.js';
-import { timer } from './timer.js';
+import { Timer } from './timer.js';
 
 export let words = [];
 export let printedWords = [];
 let isStart = false;
-let stopTimer;
+let timer;
 
 const field = document.querySelector('.field');
 const writeInput = document.querySelector('.input-write');
@@ -30,13 +30,14 @@ const fillWords = async () => {
 
 window.onload = fillWords;
 
-const reload = () => {
+export const reload = () => {
     printedWords = [];
     field.style.marginTop = `0px`;
     isStart = false;
-    if (stopTimer) stopTimer();
     clearInput(writeInput);
     fillWords();
+
+    if (timer) timer.stop();
 };
 document.querySelector('.btn-reload').addEventListener('click', reload);
 
@@ -75,7 +76,8 @@ writeInput.addEventListener('input', () => {
 
     if (!isStart) {
         isStart = true;
-        stopTimer = timer(60);
+        timer = new Timer(10);
+        timer.start();
     }
 
     const index = printedWords.length;

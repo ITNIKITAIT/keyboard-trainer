@@ -22,4 +22,8 @@ export const getStatistic = (words, printedWords) => {
     document.getElementById('accuracy').innerHTML = accuracy + '%';
     document.getElementById('correct-words').innerHTML = correctWords;
     document.getElementById('wrong-words').innerHTML = wrongWords;
+    document.getElementById('correct-clicks').innerHTML = correctLetters;
+    document.getElementById('incorrect-clicks').innerHTML =
+        LettersTotal - correctLetters;
+    document.getElementById('total-clicks').innerHTML = LettersTotal;
 };
