@@ -1,5 +1,5 @@
-import { printedWords, words, reload } from './main.js';
-import { getStatistic } from './statistic.js';
+import { reload } from './main.js';
+import { displayStatistic } from './statistic.js';
 
 const timerBar = document.querySelector('.timer-bar__content');
 const time = document.querySelector('.time');
@@ -14,14 +14,16 @@ export class Timer {
         this.sec = sec;
         this.secLeft = sec;
         this.intervalId = null;
+        this.isStart = false;
     }
 
     start() {
+        this.isStart = true;
+
         this.intervalId = setInterval(() => {
             this.secLeft--;
             if (this.secLeft < 0) {
-                getStatistic(words, printedWords);
-                this.stop();
+                displayStatistic();
                 reload();
                 return;
             }
@@ -34,6 +36,8 @@ export class Timer {
 
     stop() {
         clearInterval(this.intervalId);
+        this.isStart = false;
+        this.secLeft = this.sec;
         reloadTimer();
     }
 }

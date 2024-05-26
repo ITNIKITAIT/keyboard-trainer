@@ -1,43 +1,63 @@
 import { getWords } from './api.js';
+import {
+    setButtonClickEvent,
+    setInputColor,
+    setKeyboardEvent,
+} from './keyboard.js';
 import { Timer } from './timer.js';
+import { updateWpm } from './statistic.js';
 
-export let words = [];
+export let globalWords = [];
 export let printedWords = [];
-let isStart = false;
-let timer;
+
+const SECONDS = 60;
+const timer = new Timer(SECONDS);
 
 const field = document.querySelector('.field');
 const writeInput = document.querySelector('.input-write');
 
-const fillWords = async () => {
+const printWords = words => {
+    words.forEach(word => {
+        const div = `<div class="word">${word}</div>`;
+        field.insertAdjacentHTML('beforeend', div);
+    });
+    globalWords = document.querySelectorAll('.word');
+};
+
+const addMoreWords = async num => {
+    const data = await getWords(num);
+    printWords(data);
+};
+
+const fillField = async () => {
     const loader = document.querySelector('.loader');
     const fieldWpapper = document.querySelector('.field--wrapper');
     fieldWpapper.style.display = 'none';
     loader.style.display = 'block';
-
     field.innerHTML = '';
-    const data = await getWords();
-    data.map(word => {
-        const div = `<div class="word">${word}</div>`;
-        field.insertAdjacentHTML('beforeend', div);
-    });
+
+    const numWords = 50;
+    const data = await getWords(numWords);
+    printWords(data);
 
     fieldWpapper.style.display = 'block';
     loader.style.display = 'none';
-    words = document.querySelectorAll('.word');
-    words[0].classList.add('word-current');
+
+    globalWords[0].classList.add('word-current');
 };
 
-window.onload = fillWords;
+const clearInput = input => (input.value = '');
 
-const clearInput = input => {
-    input.value = '';
-};
 const updateWord = (currWord, newWord) => {
     currWord.classList.add(
         currWord.textContent === newWord ? 'word--correct' : 'word--incorrect'
     );
     currWord.classList.remove('word-current');
+
+    if (printedWords.length > globalWords.length / 2) {
+        const extraWordsCount = 30;
+        addMoreWords(extraWordsCount);
+    }
 };
 const checkInput = (currWord, newWord) => {
     if (!currWord.textContent.startsWith(newWord)) {
@@ -54,12 +74,12 @@ const updateLine = nextWord => {
         field.style.marginTop = margin - lineHeight + 'px';
     }
 };
+
 export const reload = () => {
     printedWords = [];
     field.style.marginTop = '0px';
-    isStart = false;
     clearInput(writeInput);
-    fillWords();
+    fillField();
 
     if (timer) timer.stop();
 };
@@ -73,14 +93,12 @@ writeInput.addEventListener('input', () => {
         return;
     }
 
-    if (!isStart) {
-        isStart = true;
-        timer = new Timer(10);
+    if (!timer.isStart) {
         timer.start();
     }
 
     const index = printedWords.length;
-    const currWord = words[index];
+    const currWord = globalWords[index];
 
     if (newWord.at(-1) === ' ') {
         const trimmedWord = newWord.trim();
@@ -88,7 +106,7 @@ writeInput.addEventListener('input', () => {
         printedWords.push(trimmedWord);
         updateWord(currWord, trimmedWord);
 
-        const nextWord = words[index + 1];
+        const nextWord = globalWords[index + 1];
         nextWord.classList.add('word-current');
 
         updateLine(nextWord);
@@ -96,5 +114,14 @@ writeInput.addEventListener('input', () => {
         clearInput(writeInput);
         return;
     }
+
     checkInput(currWord, newWord);
 });
+
+window.onload = () => {
+    fillField();
+    setButtonClickEvent();
+    setInputColor();
+    setKeyboardEvent();
+    updateWpm();
+};
