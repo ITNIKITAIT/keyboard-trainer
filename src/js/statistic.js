@@ -21,7 +21,7 @@ export const getStatistic = () => {
         LettersTotal += needWord.length;
     });
 
-    // formula for ccuracy
+    // formula for accuracy
     const accuracy = Math.round((correctLetters / LettersTotal) * 10000) / 100;
 
     // formula for wpm
